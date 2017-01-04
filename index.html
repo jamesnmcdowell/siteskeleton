@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="HTML,CSS,JavaScript">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+
+<body class="site">
+<div class="page-wrapper site ">
+<div class="header-wrapper">
+  <header id="headerid" class="site-header">
+    <div class="container clearfix">
+        <a class="logo-link" href=""> 
+        <img id="logo" src="logotext.svg">
+        </a>
+        <nav>
+            <a href="">Page 1</a>
+            <a href="">Page 2</a>
+            <a href="">Page 3</a>
+            <a href="">Page 4</a>
+           
+        </nav>
+      
+    </div>
+</header><!-- /header -->
+</div>
+<div class="button_container" id="toggle">
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="bottom"></span>
+      </div>
+<main class="site-content">
+<div class="banner-wrapper hero-homepage clearfix">
+  <div class = "hero-container"> 
+    
+    <div id="hero" class="hero" >
+      <h1 class='hero-title'>This Is Beauty.</h1> 
+      
+    </div>
+  </div>
+</div>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<section class = "homepage-one clearfix">
+  <div class = "container clearfix"> 
+  <h1> Section 1</h1>
+  </div>  
+</section>
+
+<section class = "homepage-two clearfix">
+  <div class = "container"> 
+  <h1> Section 2</h1>
+  </div>  
+</section>
+<section class = "homepage-three clearfix">
+  <div class = "container"> 
+  <h1> Section 3</h1>
+  </div>  
+</section>
+</main>
+  
+<footer class="site-footer">
+  <div class="container clearfix">
+    <h1> Footer </h1>
+      <p>Here's some info about us in the footer. </p>
+  </div>
+</footer>
+</div>
+
+<div class="overlay" id="overlay">
+  <nav class="overlay-menu">
+    <ul>
+      <li ><a href="">Page 1</a></li>
+      <li><a href="">Page 2</a></li>
+      <li><a href="">Page 3</a></li>
+      <li><a href="#">Page 4</a></li>
+    </ul>
+  </nav>
+</div>
+
+<!-- js -->
+<script>
+    function init() {
+        
+        window.addEventListener('scroll', function(e){
+            var header = document.querySelector("#headerid");
+            var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                shrinkOn = 300;
+             
+            if (distanceY > shrinkOn) {
+                header.classList.add("smaller");
+            } else {
+              if (header.classList.contains("smaller")) {
+                header.classList.remove("smaller");
+              }
+            }
+        });
+    }
+    window.onload = init();
+</script>
+<script>
+(function() {
+  var toggle = document.querySelector("#toggle");
+  var overlay = document.querySelector("#overlay");
+  
+  
+  toggle.addEventListener("click", function() {
+    toggle.classList.toggle("active")
+    overlay.classList.toggle("open");
+    
+  });
+  
+})();  
+
+  
+</script>  
+</body>
+</html>
